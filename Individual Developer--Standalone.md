@@ -13,3 +13,7 @@ A standalone individual developer does not exchange pathces with other people, a
  - `git-rebase` to maintain topic branches.
  - `git-tag` to mark a known point.
 
+After a commit, using following commands to create a lightweight, unannotated tag:
+
+> git tag v2.43
+
