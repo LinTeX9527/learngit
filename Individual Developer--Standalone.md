@@ -19,6 +19,11 @@ After a commit, using following commands to create a lightweight, unannotated ta
 > git tag v2.43
 
 
+# modify last commit message #
+
+> git commit --amend
+
+
 # limit output of `git log` #
 
 > git log --since='3 days ago'
