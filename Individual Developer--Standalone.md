@@ -31,3 +31,8 @@ After a commit, using following commands to create a lightweight, unannotated ta
 > git log --until=2005-12-10
 
 
+# view changes related to files or dir since commitID #
+view only the changed that touch what's in `curses/` directory, since `v2.43` tag.
+
+> git log v2.43.. curses/
+
