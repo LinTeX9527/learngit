@@ -206,4 +206,40 @@ $ git checkout -b my-todo-copy origin/todo
 
 命令`git-fetch`不带参数，会更新所有的远程跟踪分支到最新的版本。它不会触及到你所拥有的分支，即便是克隆时创建的**master**分支。
 
-## 从其他的仓库获取分支 ##
+## 章节9  从其他的仓库获取分支 ##
+你也可以跟踪不是你克隆的哪些仓库的分支，使用命令`git-remote`:
+
+```
+$ git remote add staging git://git.kernel.org/.../gregkh/staging.git
+$ git fetch staging
+...
+From git://git.kernel.org/pub/scm/linux/kernel/git/gregkh/staging
+ * [new branch] 		master 		-> staging/master
+ * [new branch] 		staging-linus -> staging/staging-linus
+ * [new branch] 		staging-next -> staging/staging-next
+```
+
+新的远程跟踪分支会存放在你使用`git remote add`命令添加的简写名称的路径下面，在`staging`例子中：
+
+```
+$ git branch -r
+  origin/HEAD -> origin/master
+  origin/master
+  staging/master
+  staging/staging-linus
+  staging/staging-next
+```
+
+如果你稍后运行命令`git fetch <remote>`，与**remote**对应的远程跟踪分支就会被更新。
+
+如果你查看**.git/config**就可看到新添加的一段：
+
+```
+$ cat .git/config
+...
+[remote "staging"]
+	url = git://git.kernel.org/pub/scm/linux/kernel/git/gregkh/staging.git
+	fetch = +refs/heads/*:refs/remotes/staging/*
+...
+```
+
