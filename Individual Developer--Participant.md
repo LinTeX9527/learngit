@@ -24,3 +24,9 @@ after some commits, you can creat a patch from this branch compare to another co
 
 > git format-patch master
 
+
+## send email from git command ##
+you can send email to someone and attach with a patch.
+
+> git send-email --to="person <email@example.com>" 00*.patch
+
