@@ -164,7 +164,30 @@ $ git branch
 这是一个很简单的方法，检出一个特定的版本但不用可新分支起名字。你也可以对这个版本创建分支或者标签。
 
 
-## 查看远程仓库的分支 ##
+## 章节6  查看远程仓库的分支 ##
+
+克隆是创建的**master**分支是那个仓库的**HEAD**的拷贝。那个远程仓库可能有其他的分支，尽管如此，你的本地仓库保留了跟踪远程仓库的那些远程分支的本地分支，称为*远程跟踪*分支，可以通过命令`git branch -r`查看：
+```
+$ git branch -r
+  origin/HEAD
+  origin/html
+  origin/maint
+  origin/man
+  origin/master
+  origin/next
+  origin/pu
+  origin/todo
+```
+
+在这个例子中，**origin**称为远程仓库，简称为*远程*。从我们的视角来看这个仓库的分支称为远程分支。远程跟踪分支实在克隆远程仓库是基于浙西远程分支创建的，可以通过命令`git fetch`，`git pull`和`git push`来更新。
+
+你或许想从远程跟踪分支建立一个自己的分支，就像从标签建立新分支一样：
+```
+$ git checkout -b my-todo-copy origin/todo
+```
+
+
+
 ## 命名分支，标签或者其他的引用 ##
 ## 使用`git fetch`更新仓库 ##
 ## 从其他的仓库获取分支 ##
