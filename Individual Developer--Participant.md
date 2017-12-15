@@ -30,3 +30,12 @@ you can send email to someone and attach with a patch.
 
 > git send-email --to="person <email@example.com>" 00*.patch
 
+
+## see what happened after a pull ##
+Immediately after pulling, look at the changes doen upstream since last time we checked, only in the area we are interested in, in this case, we are only interested in directories `arch/i386` and `include/asm-i386`.
+
+> git pull
+
+> git log -p AHEAD.. arch/i386 include/asm-i386
+
+
