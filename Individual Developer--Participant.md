@@ -9,3 +9,11 @@ A developer working as a participant in a group project needs to learn how to co
  - `git-send-email` to send your e-mail submission without corruption by your MUA.
  - `git-request-pull` to create a summary of changes for your upstream to pull.
 
+
+
+# Examples #
+
+## checkout a new branch from a startpoint ##
+
+> git checkout -b mine master
+
