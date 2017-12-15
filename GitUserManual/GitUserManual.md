@@ -132,8 +132,38 @@ ref: refs/heads/master
 ```
 
 
+## 章节5  查看老版本但不用创建分支 ##
+命令`git checkout`通常接一个分支头，但是也可以接一个任意的提交，例如接一个标签：
+```
+$ git checkout v2.6.17
+Note: checking out 'v2.6.17'.
 
-## 查看老版本但不用创建分支 ##
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by performing another checkout.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -b with the checkout command again. Example:
+
+  git checkout -b new_branch_name
+
+HEAD is now at 427abfa... Linux v2.6.17
+```
+
+**HEAD**现在指向提交的**SHA-1**而不是分支，并且`git branch`显示你已经不再分支上面了：
+```
+$ cat .git/HEAD
+427abfa28afedffadfca9dd8b067eb6d36bac53f
+$ git branch
+* (detached from v2.6.17)
+  master
+```
+
+在这种情况下我们说**HEAD**是分离的。
+
+这是一个很简单的方法，检出一个特定的版本但不用可新分支起名字。你也可以对这个版本创建分支或者标签。
+
+
 ## 查看远程仓库的分支 ##
 ## 命名分支，标签或者其他的引用 ##
 ## 使用`git fetch`更新仓库 ##
