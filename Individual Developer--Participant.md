@@ -17,3 +17,10 @@ A developer working as a participant in a group project needs to learn how to co
 
 > git checkout -b mine master
 
+
+## create a patch ##
+
+after some commits, you can creat a patch from this branch compare to another commit, like master:
+
+> git format-patch master
+
