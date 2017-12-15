@@ -111,3 +111,30 @@ index 65898fa..b002dc6 100644
 
 不管怎样，只要不产生混淆，我们通常使用**分支**指代分支和分支头。
 
+
+
+## 章节4  操作分支 ##
+
+创建、删除、修改分支都非常的快而且简单，下面是命令总结：
+	- `git branch` 列出所有分支
+	- `git branch <branch>` 创建一个新的分支并命名为**branch**，指向历史中当前分支指向的同样的点
+	- `git branch <branch> <start-point>` 创建一个新的分支并命名为**branch**，指向**start-point**，它可以任由你指定，可以是分支名也可以是标签名。
+	- `git branch -d <branch>` 删除分支**branch**，如果分支没有充分地合并到上游分支或者被当前分支包含，这个命令会出错并且显示警告信息。
+	- `git branch -D <branch>` 删除分支**branch**不管它的合并状态如何。
+	- `git checkout <branch>` 切换当前分支为**branch**，从分支**branch**指向的历史来更新工作目录。
+	- `git checkout -b <new> <start-point>` 创建一个分支**new**并且指向**start-point**，然后检出分支**new**。
+
+特殊符号**HEAD**一直都指向当前分支。事实上Git使用**.git**目录下的一个名字为**HEAD**的文件来记住当前分支是哪一个。
+
+```
+$ cat .git/HEAD
+ref: refs/heads/master
+```
+
+
+
+## 查看老版本但不用创建分支 ##
+## 查看远程仓库的分支 ##
+## 命名分支，标签或者其他的引用 ##
+## 使用`git fetch`更新仓库 ##
+## 从其他的仓库获取分支 ##
