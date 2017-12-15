@@ -39,3 +39,10 @@ Immediately after pulling, look at the changes doen upstream since last time we 
 > git log -p AHEAD.. arch/i386 include/asm-i386
 
 
+## revert the pull and garbage collect ##
+Revert the pull and garbage collect leftover objects from reverted pull.
+
+> git reset --hard ORIG_HEAD
+
+> git gc
+
