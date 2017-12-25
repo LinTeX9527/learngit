@@ -97,3 +97,37 @@ $ git tag stable-1 1b2e1d63ff
 
 这样创建一个轻量级的标签。如果你想在创建标签时包含一个注释，并且加密，你可以创建一个标签对象。
 
+# 章节13  浏览历史 #
+命令`git-log`会显示历史列表。就其本身而言，它会显示父辈提交所能追溯到的所有提交，但是你可以发出特殊的请求：
+```
+$ git log v2.5..		# 从v2.5之后所有的提交，但是不包括v2.5这个提交，即 (v2.5, HEAD]
+
+$ git log test..master	# 列出从test到master之间的提交，不包括test，但是包括master即(test, master]
+
+$ git log master..test	# 列出test可以访问的提交，但是master不能访问的提交，即(master, test]
+
+$ git log master...test	# 列出master和test能够单独访问的提交，但是不能是二者同时访问的提交，即master和test的对称差
+
+$ git log --since="2 weeks ago" 	# 列出最近2周的提交
+
+$ git log Makefile      # 列出包含更改文件Makefile的所有提交
+
+$ git log fs/			# 列出包含更改目录fs/下面任何文件的所有提交
+
+$ git log -S'foo()'		# 列出文件中所有关于字符串'foo()'的增加、删除的提交
+
+```
+
+当然你可以使用任意的组合，例如下面这个命令列出从v2.5之后所有更改*Makefile*或者*fs/*目录下面的文件的所有的提交：
+```
+$ git log v2.5.. Makefile fs/
+```
+
+还可以使用如下命令来列出补丁：
+```
+$ git log -p
+```
+
+注意到**git log**会列出最近的提交然后反向追踪到父辈提交，因为Git历史可能包含多个开发中的独立分支，实际列出的提交的顺序在某种程度上是随意。
+
+
