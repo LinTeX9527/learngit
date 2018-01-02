@@ -201,4 +201,12 @@ e05db0fd tags/v1.5.0-rc1^0~23
 部分省略。
 
 
+### 为软件发布版本创建一个changelog并且打包 ###
+命令`git-archive`会对工程的任意一个版本创建打包文件，示例如下：
+```
+$ git archive -o latest.tar.gz  --prefix=project/ HEAD
+```
+
+会使用*HEAD*产生一个压缩文件，其中的每一个文件名字都添加了前缀`project/`。如果可能的话会使用输出文件的扩展名作为输出文件的格式。
+
 
