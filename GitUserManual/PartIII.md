@@ -12,7 +12,7 @@ $ git config --global user.email 'you@yourdomain.example.com'
  	email = you@yourdomain.example.com
 ```
 
-## 章节18 创建新的仓库 ###
+## 章节18  创建新的仓库 ###
 从头开始创建一个仓库是非常简单的：
 ```
 $ mkdir project
@@ -28,7 +28,7 @@ $ git add . # include everything below ./ in the first commit:
 $ git commit
 ```
 
-## 章节19 如何提交 ##
+## 章节19  如何提交 ##
 新建提交需要3个步骤：
  1. 工作目录中做一些修改
  2. 告诉Git你做了哪些修改
@@ -62,7 +62,24 @@ $ git diff HEAD 		# 显示工作目录和HEAD之间的差别
 $ git status			# 工作目录中每个修改文件的简短状态
 ```
 
-## 章节20 创建好的提交信息 ##
+## 章节20  创建好的提交信息 ##
 尽管不是必须的，这是一个好主意，提交信息以简短的一行文字（少于50个字符）总结所做的更改，紧接着一个空行，紧接着一个全面的描述。第一个空行上面的文字被视为提交标题，这个标题会在Git中到处使用。
 
+
+## 章节21  忽略文件 ##
+工程经常会产生一些你不希望Git进行跟踪的文件。可以在文件**.gitignore**中告诉Git不需要跟踪哪些文件，例如：
+```
+# Lines starting with '#' are considered comments.
+# Ignore any file named foo.txt.
+foo.txt
+
+# Ignore (generated) html files
+*.html
+
+# except foo.html which is maintanined by hand.
+!foo.html
+
+# Ignore objects and archives.
+*.[oa]
+```
 
