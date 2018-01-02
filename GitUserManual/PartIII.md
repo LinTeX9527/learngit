@@ -11,3 +11,20 @@ $ git config --global user.email 'you@yourdomain.example.com'
  	name = Your Name Comes Here
  	email = you@yourdomain.example.com
 ```
+
+## 章节18 创建新的仓库 ###
+从头开始创建一个仓库是非常简单的：
+```
+$ mkdir project
+$ cd project
+$ git init
+```
+如果你已经有了初始化的内容，例如一个压缩文件，可以这样：
+```
+$ tar xzvf project.tar.gz
+$ cd project
+$ git init
+$ git add . # include everything below ./ in the first commit:
+$ git commit
+```
+
